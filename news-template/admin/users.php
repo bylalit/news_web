@@ -40,30 +40,6 @@
                                     }
                                 }
                             ?>
-                          <!-- <tr>
-                              <td class='id'>2</td>
-                              <td>Shyam Kumar</td>
-                              <td>shyam</td>
-                              <td>normal</td>
-                              <td class='edit'><a href='update-user.php'><i class='fa fa-edit'></i></a></td>
-                              <td class='delete'><a href='delete-user.php'><i class='fa fa-trash-o'></i></a></td>
-                          </tr>
-                          <tr>
-                              <td class='id'>3</td>
-                              <td>Ramesh Kumar</td>
-                              <td>ramesh</td>
-                              <td>admin</td>
-                              <td class='edit'><a href='update-user.php'><i class='fa fa-edit'></i></a></td>
-                              <td class='delete'><a href='delete-user.php'><i class='fa fa-trash-o'></i></a></td>
-                          </tr>
-                          <tr>
-                              <td class='id'>4</td>
-                              <td>Satish Sharma</td>
-                              <td>satish</td>
-                              <td>admin</td>
-                              <td class='edit'><a href='update-user.php'><i class='fa fa-edit'></i></a></td>
-                              <td class='delete'><a href='delete-user.php'><i class='fa fa-trash-o'></i></a></td>
-                          </tr> -->
                       </tbody>
                   </table>
                   <ul class='pagination admin-pagination'>
