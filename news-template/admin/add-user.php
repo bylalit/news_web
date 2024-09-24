@@ -5,9 +5,33 @@
               <div class="col-md-12">
                   <h1 class="admin-heading">Add User</h1>
               </div>
+              <?php
+                if(isset($_POST['save'])){
+                    include "config.php";
+                    $fname = mysqli_real_escape_string($conn, $_POST['fname']);
+                    $lname = mysqli_real_escape_string($conn,$_POST['lname']);
+                    $user = mysqli_real_escape_string($conn,$_POST['user']);
+                    $password = mysqli_real_escape_string($conn,md5($_POST['password']));
+                    $role = mysqli_real_escape_string($conn,$_POST['role']);
+
+                    $sql = "SELECT username FROM user WHERE username = '$user'";
+                    $result = mysqli_query($conn, $sql) or die("Querry  failed");
+
+                    if(mysqli_num_rows($result) > 0){
+                        echo  "<script>alert('Username already exists')</script>";
+                    }else{
+                        $sql1 = "INSERT INTO user(user_id, first_name, last_name, username, password, role) VALUES ('$user', '$fname', '$lname', '$user', '$password', '$role')";
+                        if(mysqli_query($conn, $sql1)){
+                            header("Location: {$hostname}/admin/users.php");
+                        }
+                    }
+
+                }
+
+              ?>
               <div class="col-md-offset-3 col-md-6">
                   <!-- Form Start -->
-                  <form  action="" method ="POST" autocomplete="off">
+                  <form  action="<?php $_SERVER['PHP_SELF']; ?>" method ="POST" autocomplete="off">
                       <div class="form-group">
                           <label>First Name</label>
                           <input type="text" name="fname" class="form-control" placeholder="First Name" required>
