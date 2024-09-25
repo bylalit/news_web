@@ -23,11 +23,11 @@
               </div>
               <div class="col-md-offset-3 col-md-6">
                 <?php
-                    include "config.php";
-                    $id = $_GET['id'];
-                    $sql = "SELECT * FROM category WHERE category_id = '$id'";
-                    $result = mysqli_query($conn, $sql) or die("Connection Failed");
-                    while($row = mysqli_fetch_assoc($result)){
+                    // include "config.php";
+                    // $id = $_GET['id'];
+                    // $sql = "SELECT * FROM category WHERE category_id = '$id'";
+                    // $result = mysqli_query($conn, $sql) or die("Connection Failed");
+                    // while($row = mysqli_fetch_assoc($result)){
                 ?>
                   <form action="<?php $_SERVER['PHP_SELF']; ?>" method ="POST">
                       <div class="form-group">
