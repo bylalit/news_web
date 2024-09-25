@@ -6,7 +6,6 @@
         $cat_id = mysqli_real_escape_string($conn, $_POST['cat_id']);
         $cat_name = mysqli_real_escape_string($conn, $_POST['cat_name']);
 
-        // $sql = "UPDATE category SET category_name = {$cat_name} WHERE category_id = {$cat_id}";
         $sql = "UPDATE category SET category_name = '{$cat_name}' WHERE category_id = '{$cat_id}'";
         $result = mysqli_query($conn, $sql) or die("Queery failed.");
 
