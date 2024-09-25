@@ -6,8 +6,23 @@
                   <h1 class="admin-heading">Add New Category</h1>
               </div>
               <div class="col-md-offset-3 col-md-6">
+
+              <?php
+                if (isset($_POST['save'])) {
+                    include "config.php";
+                    $cat = mysqli_real_escape_string($conn, $_POST['cat']);
+    
+                    $sql = "INSERT INTO category(category_name) VALUES ('$cat')";
+
+                    if (mysqli_query($conn, $sql)) {
+                        header("Location: {$hostname}/admin/category.php");
+                    }else{
+                        echo "Error: " . $sql1 . "<br>" . mysqli_error($conn);
+                    }
+                }
+              ?>
                   <!-- Form Start -->
-                  <form action="" method="POST" autocomplete="off">
+                  <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" autocomplete="off">
                       <div class="form-group">
                           <label>Category Name</label>
                           <input type="text" name="cat" class="form-control" placeholder="Category Name" required>
