@@ -11,6 +11,10 @@
               <div class="col-md-12">
                 <?php
                     include "config.php";
+                    $limit = 3;
+
+
+                    
                     $sql = "SELECT * FROM user ORDER BY user_id DESC";
                     $result = mysqli_query($conn,$sql) or die("Qurry Failed");
                     if($row = mysqli_num_rows($result)){
@@ -50,11 +54,27 @@
                             ?>
                       </tbody>
                   </table>
-                  <ul class='pagination admin-pagination'>
-                      <li class="active"><a>1</a></li>
-                      <li><a>2</a></li>
-                      <li><a>3</a></li>
-                  </ul>
+
+                <?php
+                    $sql1 = "SELECT * FROM user";
+                    $result1 = mysqli_query($conn, $sql1) or die("Query Failed!");
+
+                    if(mysqli_num_rows($result1) > 0){
+
+                        $total_recoard = mysqli_num_rows($result1);
+                        
+                        $total_page = ceil($total_recoard / $limit);
+                        
+                        echo "<ul class='pagination admin-pagination'>";
+                        for($i = 1; $i <= $total_page; $i++){
+                            echo '<li><a href="users.php?page='.$i.'">'.$i.'</a></li>';
+                        }
+                        echo "</ul>";
+                    }
+                ?>
+                  
+                      <!-- <li class="active"><a>1</a></li> -->
+                  
               </div>
           </div>
       </div>
