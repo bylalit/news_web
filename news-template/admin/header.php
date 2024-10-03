@@ -1,3 +1,15 @@
+<?php
+
+include "config.php";
+session_start();
+
+if(!isset($_SESSION["username"])){
+    header("location: {$hostname}/admin/");
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
