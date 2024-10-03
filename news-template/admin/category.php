@@ -66,16 +66,20 @@
                         $total_page = ceil($total_recoard / $limit);
 
                         echo "<ul class='pagination admin-pagination'>";
-                        echo "<li><a>Prev</a></li>";
-                        for($i=1; $i <= $total_page; $i++){
-                            if(){
-
-                            }else{
-                                
-                            }
-                            echo '<li><a href="category.php?page='.$i.'">'.$i.'</a></li>';
+                        if($page > 1){
+                            echo '<li><a href="category.php?page='.($page - 1).'">Prev</a></li>';
                         }
-                        echo "<li><a>Next</a></li>";
+                        for($i=1; $i <= $total_page; $i++){
+                            if($i == $page){
+                                $active = "active";
+                            }else{
+                                $active = "";
+                            }
+                            echo '<li class="'.$active.'"><a href="category.php?page='.$i.'">'.$i.'</a></li>';
+                        }
+                        if($total_page > $page){
+                            echo '<li><a href="category.php?page='.($page + 1).'">Next</a></li>';
+                        }
                         echo "</ul>";
                     }
                 ?>
