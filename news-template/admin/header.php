@@ -38,8 +38,9 @@ if(!isset($_SESSION["username"])){
                     </div>
                     <!-- /LOGO -->
                       <!-- LOGO-Out -->
-                    <div class="col-md-offset-9  col-md-1">
-                        <a href="logout.php" class="admin-logout" >logout</a>
+                    <div class="col-md-offset-9  col-md-3">
+                        <a href="logout.php" class="admin-logout" >Hello <?php
+                        echo $_SESSION["username"]; ?>, logout</a>
                     </div>
                     <!-- /LOGO-Out -->
                 </div>
@@ -55,12 +56,19 @@ if(!isset($_SESSION["username"])){
                             <li>
                                 <a href="post.php">Post</a>
                             </li>
+                            <?php
+                                if($_SESSION["user_role"] == 1){
+
+                            ?>
                             <li>
                                 <a href="category.php">Category</a>
                             </li>
                             <li>
                                 <a href="users.php">Users</a>
                             </li>
+                            <?php
+                                }
+                            ?>
                         </ul>
                     </div>
                 </div>
