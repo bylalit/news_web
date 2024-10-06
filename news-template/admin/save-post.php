@@ -48,3 +48,4 @@ if(mysqli_multi_query($conn,   $sql)){
     echo "<div class='alert alert-denger'>Query Failed</div>";
 }
 
+
