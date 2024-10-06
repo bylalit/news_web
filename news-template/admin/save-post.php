@@ -42,9 +42,9 @@ $sql =  "INSERT INTO post (title, description, category, post_date, author, post
 
 $sql .= "UPDATE category SET post = post + 1  WHERE category_id = {$category}";
 
-// if(mysqli_multi_query($conn,   $sql)){
-//     header("location: {$hostname}/admin/post.php");
-// }else{
-//     echo "<div class='alert alert-denger'>Query Failed</div>";
-// }
+if(mysqli_multi_query($conn,   $sql)){
+    header("location: {$hostname}/admin/post.php");
+}else{
+    echo "<div class='alert alert-denger'>Query Failed</div>";
+}
 
