@@ -20,12 +20,16 @@
                     $offset = ($page - 1) * $limit;
 
                     if($_SESSION["user_role"] == '1'){
-                        $sql = "SELECT * FROM post 
+                        $sql = "SELECT post.post_id, post.title,post.description, post.post_date, category.category_name, user.username FROM post 
                         LEFT JOIN category ON post.category = category.category_id 
                         LEFT  JOIN user ON post.author = user.user_id
                         ORDER BY post_id DESC LIMIT {$offset}, {$limit}";
                     }elseif($_SESSION["user_role"] == '0'){
-                        
+                        $sql = "SELECT post.post_id, post.title,post.description, post.post_date, category.category_name, user.username FROM post 
+                        LEFT JOIN category ON post.category = category.category_id 
+                        LEFT  JOIN user ON post.author = user.user_id
+                        WHERE post.author = {$_SESSION['user_id']}
+                        ORDER BY post_id DESC LIMIT {$offset}, {$limit}";
                     }
 
                     
@@ -68,7 +72,7 @@
                   </table>
 
                 <?php
-                    $sql1 = "SELECT post.post_id, post.title,post.description, post.post_date, category.category_name, user.username FROM post";
+                    $sql1 = "SELECT * FROM post";
                     $result1 = mysqli_query($conn, $sql1) or die("Query Failed!");
 
                     if(mysqli_num_rows($result1) > 0){
