@@ -19,14 +19,16 @@
                     }
                     $offset = ($page - 1) * $limit;
 
-                    if($_SESSION["user_role"] == '0'){
-                        header("location: {$hostname}/admin/post.php");
+                    if($_SESSION["user_role"] == '1'){
+                        $sql = "SELECT * FROM post 
+                        LEFT JOIN category ON post.category = category.category_id 
+                        LEFT  JOIN user ON post.author = user.user_id
+                        ORDER BY post_id DESC LIMIT {$offset}, {$limit}";
+                    }elseif($_SESSION["user_role"] == '0'){
+                        
                     }
 
-                    $sql = "SELECT * FROM post 
-                    LEFT JOIN category ON post.category = category.category_id 
-                    LEFT  JOIN user ON post.author = user.user_id
-                    ORDER BY post_id DESC LIMIT {$offset}, {$limit}";
+                    
                     $result = mysqli_query($conn,$sql) or die("Qurry Failed");
                     if($row = mysqli_num_rows($result)){
                 ?>
