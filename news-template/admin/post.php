@@ -19,6 +19,9 @@
                     }
                     $offset = ($page - 1) * $limit;
 
+                    if($_SESSION["user_role"] == '0'){
+                        header("location: {$hostname}/admin/post.php");
+                    }
 
                     $sql = "SELECT * FROM post 
                     LEFT JOIN category ON post.category = category.category_id 
