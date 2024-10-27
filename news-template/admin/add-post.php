@@ -30,10 +30,10 @@
                               ?>
                           </select>
                       </div>
-                      <div class="form-group">
+                      <!-- <div class="form-group">
                           <label for="exampleInputPassword1">Post image</label>
                           <input type="file" name="fileToUpload" required>
-                      </div>
+                      </div> -->
                       <input type="submit" name="submit" class="btn btn-primary" value="Save" required />
                   </form>
                   <!--/Form -->

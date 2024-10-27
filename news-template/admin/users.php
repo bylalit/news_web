@@ -87,10 +87,10 @@ if($_SESSION["user_role"] == '0'){
                             }
                             echo '<li class="'.$active.'"><a href="users.php?page='.$i.'">'.$i.'</a></li>';
                         }
-                        // if($total_page > $page){
-                        //     echo '<li><a href="users.php?page='.($page + 1).'">Next</a></li>';
-                        // }
-                        // echo "</ul>";
+                        if($total_page > $page){
+                            echo '<li><a href="users.php?page='.($page + 1).'">Next</a></li>';
+                        }
+                        echo "</ul>";
                     }
                 ?>
                   
