@@ -77,13 +77,13 @@
 
                     if(mysqli_num_rows($result1) > 0){
 
-                        // $total_recoard = mysqli_num_rows($result1);
+                        $total_recoard = mysqli_num_rows($result1);
                         
-                        // $total_page = ceil($total_recoard / $limit);
+                        $total_page = ceil($total_recoard / $limit);
                         
-                        // echo "<ul class='pagination admin-pagination'>";
-                        // if($page > 1){
-                        //     echo '<li><a href="post.php?page='.($page - 1).'">Prev</a></li>';
+                        echo "<ul class='pagination admin-pagination'>";
+                        if($page > 1){
+                            echo '<li><a href="post.php?page='.($page - 1).'">Prev</a></li>';
                         }
                         for($i = 1; $i <= $total_page; $i++){
                             if($i == $page){
