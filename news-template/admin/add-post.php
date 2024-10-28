@@ -16,7 +16,7 @@
                           <label for="exampleInputPassword1"> Description</label>
                           <textarea name="postdesc" class="form-control" rows="5"  required></textarea>
                       </div>
-                      <!-- <div class="form-group">
+                      <div class="form-group">
                           <label for="exampleInputPassword1">Category</label>
                           <select name="category" class="form-control">
                               <option disabled> Select Category</option>
@@ -29,7 +29,7 @@
                                     }
                               ?>
                           </select>
-                      </div> -->
+                      </div>
                       <div class="form-group">
                           <label for="exampleInputPassword1">Post image</label>
                           <input type="file" name="fileToUpload" required>
